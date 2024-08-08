@@ -1,5 +1,7 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const link = document.querySelector('a');
+const greeting = document.querySelector("#greeting");
 
 // OR
 
@@ -7,8 +9,12 @@ const loginInput = document.querySelector("#login-form input");
 // const loginButton = document.querySelector("login-form button");
 // Either works but the 2nd one is shorter and cleaner
 
-function onLoginSubmit() {
+function onLoginSubmit(event) {
+    event.preventDefault();
+    loginForm.classList.add("hidden"); 
     const username = loginInput.value;
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove("hidden");
     console.log(username);
 
 
@@ -19,4 +25,6 @@ function onLoginSubmit() {
     // }
 };
 
+
 loginForm.addEventListener("submit", onLoginSubmit);
+
