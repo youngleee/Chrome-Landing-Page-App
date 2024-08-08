@@ -1,6 +1,5 @@
-const loginForm = document.getElementById("login-form");
-const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
 
 // OR
 
@@ -8,13 +7,16 @@ const loginButton = loginForm.querySelector("button");
 // const loginButton = document.querySelector("login-form button");
 // Either works but the 2nd one is shorter and cleaner
 
-function handleLoginButtonClick() {
+function onLoginSubmit() {
     const username = loginInput.value;
-    if (username ==='') {
-        alert("Please type in your name!");
-    } else if (username.length > 14) {
-        alert("your name is too long");
-    }
-}
+    console.log(username);
 
-loginButton.addEventListener("click",handleLoginButtonClick);
+
+    // if (username ==='') {
+    //     alert("Please type in your name!");
+    // } else if (username.length > 14) {
+    //     alert("your name is too long");
+    // }
+};
+
+loginForm.addEventListener("submit", onLoginSubmit);
