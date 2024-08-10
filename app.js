@@ -10,12 +10,13 @@ const greeting = document.querySelector("#greeting");
 // Either works but the 2nd one is shorter and cleaner
 
 const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {
     event.preventDefault();
     loginForm.classList.add("hidden"); 
     const username = loginInput.value;
-    localStorage.setItem("username", username);
+    localStorage.setItem(USERNAME_KEY, username);
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove("hidden");
     console.log(username);
@@ -29,13 +30,13 @@ function onLoginSubmit(event) {
 };
 
 
-loginForm.addEventListener("submit", onLoginSubmit);
-
-const savedUsername = localStorage.getItem("username");
+const savedUsername = localStorage.getItem(USERNAME_KEY);
 console.log(savedUsername);
 
 if (savedUsername === null) {
-    // show form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
 } else {
-    // show greeting
+    greeting.innerText = `Hello ${savedUsername}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
 }
