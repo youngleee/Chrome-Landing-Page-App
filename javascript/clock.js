@@ -6,7 +6,7 @@ function getClock(){
 }
 
 // setInterval has 2 arguments: function, time interval
-// setInterval(sayHello, 5000);
+// setInterval(sayHello, 5000);   
 
 getClock();
 setInterval(getClock, 1000);
