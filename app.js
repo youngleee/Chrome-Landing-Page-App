@@ -9,6 +9,8 @@ const greeting = document.querySelector("#greeting");
 // const loginButton = document.querySelector("login-form button");
 // Either works but the 2nd one is shorter and cleaner
 
+const HIDDEN_CLASSNAME = "hidden";
+
 function onLoginSubmit(event) {
     event.preventDefault();
     loginForm.classList.add("hidden"); 
