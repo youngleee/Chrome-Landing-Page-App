@@ -40,3 +40,8 @@ const quotes = [
     author: 'Jim Rohn'
     },
     ];
+
+    const quote = document.querySelector("#quote span:first-child");
+    const author = document.querySelector("#quote span:last-child");
+
+    console.log(quotes[Math.floor(Math.random()*10)]); 
